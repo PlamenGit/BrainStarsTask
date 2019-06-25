@@ -4,14 +4,17 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		Person personOne = new Person(200, "Dimityr", "Bulgaria");
-		
+		//Serialize
+		Person personOne = new Person("20", "Dimityr", "Bulgaria");
 		JsonSerialize <Person> jsonSerialize = new JsonSerialize <Person>();
+		JsonDeserialize <Person> jsonDeserialize = new JsonDeserialize <Person>();
+		String json = jsonSerialize.serialize(personOne);
+		System.out.println(json);
 		
-		System.out.println(jsonSerialize.serialize(personOne));
-		System.out.println("");
-
-
+		//Deserialize
+		Person personTwo = new Person();
+		personTwo = jsonDeserialize.deserialize(json, Person.class);
+		System.out.println(personTwo.toString());
 	}
 
 }

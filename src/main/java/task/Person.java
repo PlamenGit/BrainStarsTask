@@ -1,19 +1,23 @@
 package task;
 
 public class Person {
-	private int age;
+	private String age;
 	private String name;
 	private String country;
+	
+	public Person () {
+		
+	}
 
-	public Person(int age, String name, String country) {
+	public Person(String age, String name, String country) {
 		this.age = age;
 		this.name = name;
 		this.country = country;
 	}
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	public String getName() {
@@ -27,5 +31,10 @@ public class Person {
 	}
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [age=" + age + ", name=" + name + ", country=" + country + "]";
 	}
 }
