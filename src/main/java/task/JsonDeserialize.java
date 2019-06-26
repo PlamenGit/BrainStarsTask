@@ -24,8 +24,7 @@ public class JsonDeserialize <T> implements Deserialize <T> {
 			try {
 				Field field = t.getDeclaredField (entry.getKey());
 				field.setAccessible(true);
-				field.set(result, entry.getValue());
-				
+				field.set(result, entry.getValue());				
 			//t.getDeclaredField(entry.getKey()).set(result, entry.getValue());
 			} catch (Exception e) {
 				e.printStackTrace();

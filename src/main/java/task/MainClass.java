@@ -9,12 +9,12 @@ public class MainClass {
 		JsonSerialize <Person> jsonSerialize = new JsonSerialize <Person>();
 		JsonDeserialize <Person> jsonDeserialize = new JsonDeserialize <Person>();
 		String json = jsonSerialize.serialize(personOne);
-		System.out.println(json);
+		System.out.println("Serialized data: "+json);
 		
 		//Deserialize
 		Person personTwo = new Person();
 		personTwo = jsonDeserialize.deserialize(json, Person.class);
-		System.out.println(personTwo.toString());
+		System.out.println("Deserialized data: "+personTwo.toString());
 	}
 
 }
